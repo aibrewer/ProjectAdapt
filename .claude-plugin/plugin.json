@@ -1,0 +1,28 @@
+{
+  "name": "projectadapt",
+  "version": "0.4.0",
+  "userConfig": {
+    "metaEnabled": {
+      "type": "boolean",
+      "title": "Meta-agent",
+      "description": "Let a background agent review evidence and propose improvements (uses tokens).",
+      "default": true
+    },
+    "awayMaxHours": {
+      "type": "number",
+      "title": "Longest /away run (hours)",
+      "description": "The most hours /away may be set to run.",
+      "default": 24
+    },
+    "awayMaxTurns": {
+      "type": "number",
+      "title": "Most turns per /away run",
+      "description": "/away stops after this many turns.",
+      "default": 200
+    }
+  },
+  "types": "./types/index.d.ts",
+  "description": "Goal focus, a persistent memory bank, and a mistake-to-lesson loop that makes Claude Code improve across sessions.",
+  "author": { "name": "aibrewer" },
+  "license": "MIT"
+}
