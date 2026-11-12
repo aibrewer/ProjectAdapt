@@ -2,6 +2,51 @@
 
 A Claude Code plugin that makes Claude get better the more you use it, and lets it drive a project with as little input from you as possible.
 
+## Install
+
+**What you need:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's coding assistant for the terminal, desktop and IDEs, in a recent version. ProjectAdapt is a Claude Code plugin. It does not work in other AI apps (ChatGPT, Gemini, Copilot, the claude.ai website and so on), because it relies on Claude Code's plugin system.
+
+### Easiest way: two commands inside Claude Code
+
+Open Claude Code, then type these at the prompt, one at a time:
+
+```
+/plugin marketplace add aibrewer/ProjectAdapt
+/plugin install projectadapt@projectadapt
+```
+
+Restart Claude Code (or open a new session), and you're done. To start using it:
+
+```
+/activate my first project
+```
+
+### From a terminal instead
+
+```
+claude plugin marketplace add aibrewer/ProjectAdapt
+claude plugin install projectadapt@projectadapt
+```
+
+### Try it without installing
+
+Download this repo (green **Code** button, then **Download ZIP**, then unzip it) or `git clone` it, then start Claude Code with:
+
+```
+claude --plugin-dir /path/to/ProjectAdapt
+```
+
+It is loaded for that session only.
+
+### Update or remove
+
+```
+/plugin marketplace update projectadapt     get the latest version
+/plugin uninstall projectadapt@projectadapt remove it
+```
+
+Uninstalling leaves your saved projects and lessons in `~/.claude/projectadapt/`. Delete that folder too if you want everything gone.
+
 ## Start here: one command per chat
 
 ```
@@ -93,17 +138,6 @@ In `/config`, under ProjectAdapt: **Meta-agent** on/off (it uses tokens), **Long
 ## What it can't do
 
 It improves Claude's *harness* (instructions, memory, its own code), not the model itself, which no plugin can retrain. Claude Code must stay open, and the computer awake, for `/away` to keep running. Long runs use tokens on your account.
-
-## Install
-
-At the prompt of a Claude Code terminal session:
-
-```
-/plugin marketplace add aibrewer/ProjectAdapt
-/plugin install projectadapt@projectadapt
-```
-
-From a shell: `claude plugin marketplace add aibrewer/ProjectAdapt` then `claude plugin install projectadapt@projectadapt`. To try it from a local clone: `claude --plugin-dir /path/to/ProjectAdapt`.
 
 ## License
 
